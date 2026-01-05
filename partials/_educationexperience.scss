@@ -1,0 +1,91 @@
+#education-experience {
+  .container {
+    @include flex(row, flex-start, space-evenly);
+    padding: 0 8%;
+    .education,
+    .experience {
+      width: 50%;
+      @include flex(column, flex-start);
+      ul {
+        width: 100%;
+        @include flex(column, flex-start, left);
+        margin-top: 2rem;
+        gap: 0.2rem;
+        li {
+          width: 100%;
+          @include flex;
+          span {
+            &:last-child {
+              color: $subtext-color;
+            }
+          }
+        }
+        p {
+          margin-bottom: 1rem;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+      }
+    }
+    .education {
+      padding-right: 5%;
+
+      border-right: 1px solid $light-color;
+    }
+    .experience {
+      padding-left: 5%;
+    }
+  }
+}
+// =================== tablet devices ======================
+@media screen and (max-width: 1024px) {
+  #education-experience {
+    .container {
+      .education,
+      .experience {
+        ul {
+          gap: 0.1rem;
+          margin-top: 1.6rem;
+          li {
+            font-size: 14px;
+          }
+          p {
+            margin-bottom: 1rem;
+            font-size: 12px;
+          }
+        }
+      }
+      .education {
+        padding-left: 0;
+      }
+      .experience {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// =================== tablet devices ======================
+@media screen and (max-width: 600px) {
+  #education-experience {
+    .container {
+      @include flex(column);
+      padding: 0;
+      .education,
+      .experience {
+        width: 100%;
+        padding: 0;
+        border: none;
+        ul {
+          margin-top: 1rem;
+        }
+      }
+      .education {
+        margin-bottom: 0;
+      }
+      .experience {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

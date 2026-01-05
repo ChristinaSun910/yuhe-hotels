@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@200;300;400;500;600&family=Quicksand:wght@300;400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+$primary-color: #794577;
+$primary-color-variant: rgba($primary-color, 0.1);
+$primary-second-color: #f2ecf1;
+$white-color: #ffffff;
+$black-color: #000000;
+$text-color: #281728;
+$light-color: #f1f1f1;
+$subtext-color: #8e8e8e;
+
+$container-lg: 82%;
+$container-md: 90%;
+$container-sm: 70%;

@@ -1,0 +1,36 @@
+#about {
+  background-color: $primary-second-color;
+
+  .container {
+    align-items: center;
+    padding: 6rem 8%;
+    p {
+      margin-top: 2rem;
+      line-height: 2.4;
+      text-align: center;
+    }
+  }
+}
+// =================== tablet devices ======================
+@media screen and (max-width: 1024px) {
+  #about {
+    .container {
+      p {
+        margin-top: 1.6rem;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+// =================== tablet devices ======================
+@media screen and (max-width: 600px) {
+  #about {
+    .container {
+      padding: 4rem 0;
+      p {
+        margin-top: 1.2rem;
+      }
+    }
+  }
+}

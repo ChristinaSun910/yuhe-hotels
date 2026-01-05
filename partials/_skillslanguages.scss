@@ -1,0 +1,58 @@
+#skills-languages {
+  .container {
+    ul {
+      margin-top: 2rem;
+    }
+  }
+}
+// =================== tablet devices ======================
+@media screen and (max-width: 1024px) {
+  .education-experience {
+    .container {
+      .education,
+      .experience {
+        ul {
+          gap: 0.1rem;
+          margin-top: 1.6rem;
+          li {
+            font-size: 14px;
+          }
+          p {
+            margin-bottom: 1rem;
+            font-size: 12px;
+          }
+        }
+      }
+      .education {
+        padding-left: 0;
+      }
+      .experience {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// =================== tablet devices ======================
+@media screen and (max-width: 600px) {
+  .education-experience {
+    .container {
+      @include flex(column);
+      .education,
+      .experience {
+        width: 70%;
+        padding: 0;
+        border: none;
+        ul {
+          margin-top: 1rem;
+        }
+      }
+      .education {
+        margin-bottom: 0;
+      }
+      .experience {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

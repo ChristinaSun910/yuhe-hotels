@@ -1,0 +1,98 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  color: $text-color;
+  font-family: "Quicksand", sans-serif;
+  user-select: none;
+}
+section {
+  margin-top: 6rem;
+}
+.container {
+  @include flex(column, flex-start);
+  padding: 0 8%;
+  width: $container-lg;
+  margin: 0 auto;
+  color: $primary-color;
+  h1 {
+    font-family: "Playfair Display", serif;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+  h5 {
+    font-family: "Quicksand", sans-serif;
+    align-items: left;
+  }
+}
+img {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+  color: $primary-color;
+}
+a {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: $text-color;
+  &:hover {
+    color: $primary-color;
+  }
+}
+p {
+  color: $text-color;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+ul,
+li {
+  list-style: none;
+}
+
+.btn-outline-primary {
+  @include button;
+}
+.btn-primary {
+  @include button($white-color, $primary-color, $white-color);
+}
+
+// =================== tablet devices ======================
+@media screen and (max-width: 1024px) {
+  .container {
+    width: $container-md;
+  }
+  section {
+    margin: 4rem 0;
+  }
+  p {
+    line-height: 2;
+    font-size: 14px;
+  }
+}
+
+// =================== tablet devices ======================
+@media screen and (max-width: 600px) {
+  .container {
+    width: $container-sm;
+    padding: 0;
+  }
+  section {
+    margin-top: 4rem;
+  }
+  p {
+    line-height: 1.5;
+  }
+}

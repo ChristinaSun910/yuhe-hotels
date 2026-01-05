@@ -1,0 +1,805 @@
+/* 雨禾集团酒店网站 - 主样式文件 */
+/* 版本: 1.1 - 更新图片Logo */
+
+/* ====== 基础重置与全局样式 ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  color: #1a365d;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ====== 通用按钮样式 ====== */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #2a5caa;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1e4a8c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(42, 92, 170, 0.2);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #2a5caa;
+  border: 2px solid #2a5caa;
+}
+
+.btn-outline:hover {
+  background-color: #2a5caa;
+  color: white;
+}
+
+/* ====== 标题区域样式 ====== */
+.section-title {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ====== 导航栏样式 ====== */
+header {
+  background-color: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1001;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+/* Logo图片样式 */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 60px;
+}
+
+.logo-image {
+  height: 100%;
+  width: auto;
+  max-height: 50px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.logo-image:hover {
+  opacity: 0.9;
+}
+
+/* 导航链接样式 */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #2a5caa;
+}
+
+.nav-links a.active {
+  color: #2a5caa;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #2a5caa;
+}
+
+/* 移动端菜单按钮 */
+.mobile-menu-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1a365d;
+}
+
+/* ====== 轮播图样式 ====== */
+.carousel {
+  position: relative;
+  height: 85vh;
+  margin-top: 76px;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(26, 54, 93, 0.75), rgba(26, 54, 93, 0.85));
+  z-index: -1;
+}
+
+.slide-content {
+  max-width: 800px;
+  color: white;
+  padding: 0 20px;
+}
+
+.slide-content h1 {
+  font-size: 3.2rem;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.slide-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+/* 轮播控制按钮 */
+.carousel-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-dot.active {
+  background-color: white;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-arrow.prev {
+  left: 30px;
+}
+
+.carousel-arrow.next {
+  right: 30px;
+}
+
+/* ====== 酒店展示区域样式 ====== */
+.hotels-section {
+  background-color: white;
+}
+
+/* 酒店筛选按钮 */
+.hotels-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.filter-btn {
+  padding: 10px 25px;
+  background-color: #f1f5f9;
+  border: none;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background-color: #2a5caa;
+  color: white;
+}
+
+/* 酒店卡片容器 */
+.hotels-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+/* 单个酒店卡片 */
+.hotel-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hotel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hotel-info {
+  padding: 25px;
+}
+
+.hotel-category {
+  display: inline-block;
+  background-color: #e6f2ff;
+  color: #2a5caa;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.hotel-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.hotel-location {
+  color: #666;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.hotel-location i {
+  margin-right: 8px;
+  color: #2a5caa;
+}
+
+.hotel-features {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.hotel-features li {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.hotel-features i {
+  color: #2a5caa;
+  margin-right: 8px;
+  width: 18px;
+}
+
+.hotel-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.price-from {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.price-amount {
+  color: #2a5caa;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* ====== 关于集团区域样式 ====== */
+.about-section {
+  background-color: #f8f9fa;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  align-items: center;
+}
+
+.about-text h3 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* 统计数据样式 */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2a5caa;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== 预订区域样式 ====== */
+.booking-section {
+  background-color: white;
+}
+
+.booking-container {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #444;
+}
+
+.form-control {
+  padding: 14px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.form-control:focus {
+  border-color: #2a5caa;
+  outline: none;
+}
+
+/* ====== 页脚样式 ====== */
+footer {
+  background-color: #1a365d;
+  color: white;
+  padding: 70px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-column h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #2a5caa;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #cbd5e0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.hotel-list li {
+  margin-bottom: 15px;
+}
+
+.hotel-list a {
+  color: #cbd5e0;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.hotel-list a:hover {
+  color: white;
+}
+
+.hotel-list i {
+  margin-right: 10px;
+  color: #2a5caa;
+}
+
+.contact-info li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-info i {
+  color: #2a5caa;
+  margin-right: 12px;
+  margin-top: 5px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #2d3748;
+  font-size: 0.9rem;
+  color: #a0aec0;
+}
+
+/* ====== 响应式设计 ====== */
+
+/* 中等屏幕 (平板) */
+@media (max-width: 992px) {
+  .slide-content h1 {
+      font-size: 2.8rem;
+  }
+  
+  .section-title h2 {
+      font-size: 2.2rem;
+  }
+  
+  .carousel-arrow {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+  }
+  
+  .carousel-arrow.prev {
+      left: 15px;
+  }
+  
+  .carousel-arrow.next {
+      right: 15px;
+  }
+}
+
+/* 小屏幕 (大手机) */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+  }
+  
+  .nav-links.active {
+      display: flex;
+  }
+  
+  .nav-links li {
+      margin: 10px 0;
+      margin-left: 0;
+  }
+  
+  .mobile-menu-btn {
+      display: block;
+  }
+  
+  .slide-content h1 {
+      font-size: 2.2rem;
+  }
+  
+  .hero-btns {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .booking-container {
+      padding: 30px;
+  }
+  
+  .section-padding {
+      padding: 60px 0;
+  }
+  
+  .carousel {
+      height: 75vh;
+  }
+  
+  /* 移动端Logo调整 */
+  .logo {
+      height: 50px;
+  }
+  
+  .logo-image {
+      max-height: 40px;
+  }
+}
+
+/* 超小屏幕 (手机) */
+@media (max-width: 576px) {
+  .slide-content h1 {
+      font-size: 1.9rem;
+  }
+  
+  .slide-content p {
+      font-size: 1rem;
+  }
+  
+  .section-title h2 {
+      font-size: 1.8rem;
+  }
+  
+  .hotels-container {
+      grid-template-columns: 1fr;
+  }
+  
+  .booking-form {
+      grid-template-columns: 1fr;
+  }
+  
+  .stats-container {
+      grid-template-columns: 1fr;
+  }
+  
+  .carousel {
+      height: 70vh;
+  }
+  
+  .carousel-arrow {
+      display: none;
+  }
+}
+
+/* ====== 辅助类样式 ====== */
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+/* ====== 动画效果 ====== */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+      opacity: 0;
+      transform: translateX(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}

@@ -1,0 +1,160 @@
+header {
+  background-color: $white-color;
+  margin: 5rem auto;
+  @include flex;
+
+  .container {
+    @include flex(row, flex-start, center);
+    height: 500px;
+
+    .left {
+      height: 85%;
+      overflow: hidden;
+      img {
+        height: 100%;
+      }
+    }
+    .right {
+      padding: 3rem 2rem;
+      background: $primary-color;
+      height: 100%;
+      // width: 48%;
+      @include flex(column);
+      gap: 2rem;
+      color: $white-color;
+      h2 {
+        color: $white-color;
+        &::after {
+          content: "";
+          display: block;
+          margin: 8px auto;
+          width: 0;
+          height: 3px;
+          background: $white-color;
+          animation: lineGrow 2000ms ease-in-out forwards;
+          animation-iteration-count: infinite;
+          // animation-direction: forward;
+        }
+        @keyframes lineGrow {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 40px;
+          }
+        }
+      }
+
+      .info {
+        @include flex(column);
+        gap: 1.8rem;
+        ul {
+          @include flex(column);
+          width: 100%;
+          gap: 8px;
+          li {
+            font-size: 16px;
+          }
+        }
+        .social-media {
+          @include flex;
+          gap: 10px;
+          a {
+            display: inline-block;
+            font-size: 1.8rem;
+            color: $white-color;
+            background-color: transparent;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+// =================== tablet devices ======================
+@media screen and (max-width: 1024px) {
+  header {
+    .container {
+      .right {
+        padding: 3.8rem 1.4rem;
+        width: 44%;
+        @include flex(column);
+
+        .info {
+          gap: 1.6rem;
+          ul {
+            gap: 6px;
+            li {
+              font-size: 14px;
+            }
+          }
+          .social-media {
+            gap: 8px;
+            a {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// =================== tablet devices ======================
+@media screen and (max-width: 600px) {
+  header {
+    margin: 4rem auto;
+    .container {
+      @include flex(column);
+      height: 100%;
+
+      .left {
+        width: 100%;
+        background: $primary-color;
+        padding: 2rem 1.8rem 0 1.8rem;
+        img {
+          height: 100%;
+        }
+      }
+      .right {
+        width: 100%;
+        padding: 3rem 0;
+        gap: 1.6rem;
+        h2 {
+          &::after {
+            margin: 6px auto;
+            height: 2px;
+          }
+          @keyframes lineGrow {
+            0% {
+              width: 0;
+            }
+            100% {
+              width: 30px;
+            }
+          }
+        }
+
+        .info {
+          gap: 1.4rem;
+          ul {
+            gap: 4px;
+            li {
+              font-size: 14px;
+            }
+          }
+          .social-media {
+            a {
+              font-size: 1.6rem;
+            }
+          }
+        }
+        .btn-outline-primary {
+          font-size: 0.8rem;
+          width: 90%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+nav {
+  height: 5rem;
+  background-color: $light-color;
+  display: grid;
+  place-items: center;
+
+  .container {
+    @include flex;
+    padding: 0;
+
+    .nav__logo {
+      h1 {
+        font-size: 1.8rem;
+        color: $primary-color;
+        font-family: "Playfair Display", serif;
+      }
+    }
+    ul {
+      @include flex;
+      gap: 2rem;
+      li {
+        a {
+          font-family: "Playfair Display", serif;
+          font-weight: 600;
+        }
+        &.active {
+          color: $primary-color;
+        }
+      }
+    }
+
+    // only needed in small screen
+    button {
+      display: none;
+    }
+  }
+}
+// =================== tablet devices ======================
+@media screen and (max-width: 1024px) {
+  nav {
+    position: relative;
+
+    .container {
+      width: 90%;
+      button {
+        display: inline-block;
+        font-size: 1.8rem;
+        color: $primary-color;
+        cursor: pointer;
+        &#close__navBar {
+          display: none;
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        right: 5%;
+        top: 5rem;
+        background-color: $primary-second-color;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        opacity: 0;
+        animation: flipNavItems 600ms ease forwards;
+        transform-origin: top;
+        @keyframes flipNavItems {
+          0% {
+            transform: rotateX(90deg);
+          }
+          100% {
+            transform: rotateX(0deg);
+            opacity: 1;
+          }
+        }
+
+        li {
+          width: 100%;
+          a {
+            height: 100%;
+            padding: 1.5rem 2rem;
+          }
+          &:last-child {
+            width: 88%;
+            text-align: center;
+            margin: 1.5rem auto 2.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// =================== tablet devices ======================
+@media screen and (max-width: 600px) {
+  .container {
+    width: $container-sm;
+  }
+}
